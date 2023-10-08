@@ -7,6 +7,7 @@ import { InputBox, SearchBox, TweetBox} from '../../components/Input';
 import SwipeButton from '../../components/Swipe';
 import { InputTweet, SignUp } from '../../components/InputTweet';
 import Login0 from '../../pages/Login0';
+import Login1 from '../../pages/Login1';
 
 // import SwipeToActivateComponent from '../../components/Swipe';
 
@@ -37,7 +38,8 @@ export default function Home() {
         
       </main> */}
 
-      <Login0 />
+      {/* <Login0 /> */}
+      <Login1 />
     </main>
 
   )

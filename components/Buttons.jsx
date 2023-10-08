@@ -3,9 +3,9 @@
 export function Create_acc_Button({ children, onClick, disabled }) {
     return (
         <button
-            onClick={onClick}
+            // onClick={''}
             className={`w-[334px] h-[35px] flex justify-center items-center text-base
-             bg-gray-200 hover:bg-gray-50 text-black font-bold py-2 px-6  shadow-lg
+             bg-gray-200 sm:hover:bg-gray-50 text-black font-bold py-2 px-6  shadow-lg
               transform  hover:scale-105 transition-all rounded-full ${disabled ? 'bg-gray-700' : ''}`}
         >
             {children}

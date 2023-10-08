@@ -2,18 +2,20 @@
 
 import React from 'react';
 
-export function InputBox() {
+export function InputBox({label,classname}) {
     return (
-        <div className=" group relative inline-flex flex-row items-center bg-black py-4">
+        <div className={`border-0 border-green-400 group relative flex  justify-start items-center bg-black  ${classname}`}>
             <input
                 type="text"
                 id="label"
-                className="ml-2 w-[426px] border border-gray-300 bg-black rounded-lg focus:border-blue-500 px-6 py-4 focus:outline-none"
+                className={`box-content ml-2 w-full block  border border-gray-300 bg-black rounded-lg
+                 focus:border-blue-500 px-6 py-4 focus:outline-none`}
             />
             <label
                 htmlFor="label"
-                className="absolute top-[2rem] bg-black m-0 text-gray-500 text-2xl  px-2 transition-all duration-300 group-hover:top-1 left-4 group-hover:text-lg group-active:text-blue-500 group-hover:text-blue-500">
-                Label
+                className="absolute top-[1rem] bg-black m-0 text-gray-500 text-sm  px-2 transition-all duration-300 
+                group-hover:top-[-0.5rem] left-4 group-active:text-xs group-active:text-blue-500 group-hover:text-blue-500">
+                {label}
             </label>
 
         </div>
