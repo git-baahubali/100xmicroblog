@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image'
+// import './globals.css';
 import { Create_acc_Button, Follow_Button, Signup_Button, Following_Button, Post_Button, Home_icon, Group_icon } from '../../components/Buttons';
 import { Navbar } from '../../components/Navbar';
 import { InputBox, SearchBox, TweetBox} from '../../components/Input';
@@ -40,6 +41,7 @@ export default function Home() {
 
       {/* <Login0 /> */}
       <Login1 />
+      {/* page.js */}
     </main>
 
   )
