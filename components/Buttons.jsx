@@ -32,7 +32,7 @@ export function Signup_Button({ children,onClick }) {
     return (<button
         onClick={onClick}
         className={`w-[334px] h-[35px] flex justify-center items-center text-base
-                bg-gray-900 hover:twitter-blue-hover active:bg-blue-500 active:text-white text-twitter-blue-default  border-2 border-twitter-blue-default font-bold py-2 px-6  shadow-lg
+                bg-gray-900 hover:twitter-blue-hover bg-blue-500 group-active:bg-blue-700 text-white text-twitter-blue-default  border-2 border-twitter-blue-default font-bold py-2 px-6  shadow-lg
                  transform  hover:scale-105 transition-all rounded-full `}
     >{children}
     </button>

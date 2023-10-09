@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-export function InputBox({label,classname}) {
+export function InputBox({label,classname, tick,eye}) {
     return (
         <div className={`border-0 border-green-400 group relative flex  justify-start items-center bg-black  ${classname}`}>
             <input
@@ -16,7 +16,10 @@ export function InputBox({label,classname}) {
                 className="absolute top-[1rem] bg-black m-0 text-gray-500 text-sm  px-2 transition-all duration-300 
                 group-hover:top-[-0.5rem] left-4 group-active:text-xs group-active:text-blue-500 group-hover:text-blue-500">
                 {label}
+
             </label>
+            {tick && <img src="images/tick_icon.svg" alt="" className='absolute right-1 ' />}
+            {eye && <img src="images/eye.svg" alt="" srcset="" className='absolute right-1 '/>}
 
         </div>
     );
