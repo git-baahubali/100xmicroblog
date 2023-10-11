@@ -54,13 +54,25 @@ export function Following_Button({ onClick, disabled }) {
     );
 }
 
-export function Post_Button({ onClick, disabled }) {
+export function Post_Button({ onClick, disabled, size }) {
+
+    const classname= ()=>{ switch(size) {
+        case 's'://small size
+            return '  px-[24px] py-[8px]'
+          break;
+        case 'l':// large size
+            return ' w-[442px] h-[49px] py-[20px] px-[20px] box-border'
+          break;
+        default://Medium size
+            return 'w-[222px] h-[49px] py-[15px] px-[93px] '
+      }
+        }
     return (
         <button
             onClick={onClick}
-            className={`w-[222px] h-[49px] flex justify-center items-center text-base font-bold
-             text-white py-[15px] px-[93px]  shadow-lg
-             m-10  rounded-full ${disabled ? 'bg-twitter-blue-disabled hover:bg-twitter-blue-disabled ' : 'bg-twitter-blue-default hover:bg-twitter-blue-hover transform  hover:scale-105 transition-all'}`} >
+            className={`${classname()} flex justify-center items-center text-base font-bold
+             text-white   shadow-lg
+               rounded-full ${disabled ? 'bg-twitter-blue-disabled hover:bg-twitter-blue-disabled ' : 'bg-twitter-blue-default hover:bg-twitter-blue-hover transform  hover:scale-105 transition-all'}`} >
             Post
         </button>
     );

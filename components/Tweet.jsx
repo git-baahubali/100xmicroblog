@@ -6,7 +6,7 @@ function Tweet() {
         <div className='w-[48px]'>
             <img src="Images/user-avatar.png" alt="" srcset="" className='w-[48px]' />
         </div>
-        <section className=' '>
+        <section className='tweet'>
             <header className='inline '>
                 <p className='inline'>Name
                 <span className='inline mx-1 text-gray-500'>@handle 32m</span> </p>
