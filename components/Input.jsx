@@ -9,7 +9,7 @@ export function InputBox({label,classname, tick,eye}) {
                 type="text"
                 id="label"
                 className={`box-content ml-2 w-full block  border border-gray-300 bg-black rounded-lg
-                 focus:border-blue-500 px-6 py-4 focus:outline-none`}
+                 focus:border-blue-500 px-6 py-[16px] focus:outline-none`}
             />
             <label
                 htmlFor="label"
