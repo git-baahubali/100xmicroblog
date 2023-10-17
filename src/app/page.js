@@ -7,8 +7,8 @@ import { Navbar } from '../../components/Navbar';
 import { InputBox, SearchBox, TweetBox} from '../../components/Input';
 import SwipeButton from '../../components/Swipe';
 import { InputTweet, SignUp } from '../../components/InputTweet';
-import Login0 from '../../pages/Login0';
-import Login1 from '../../pages/Login1';
+import Login0 from '../../pages/Create0';
+import Login1 from '../../pages/Create1';
 
 // import SwipeToActivateComponent from '../../components/Swipe';
 
@@ -20,6 +20,7 @@ export default function Home() {
 
   return (
     <main>
+      <Login0 />
       {/* <Create_acc_Button disabled={false}>Create Account</Create_acc_Button>
       <Signup_Button >Sign up</Signup_Button>
       <Follow_Button disabled={false}>Follow</Follow_Button>
@@ -38,10 +39,6 @@ export default function Home() {
         <SignUp />
         
       </main> */}
-
-      {/* <Login0 /> */}
-      <Login1 />
-      {/* page.js */}
     </main>
 
   )

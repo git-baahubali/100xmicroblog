@@ -12,7 +12,7 @@ function Home() {
             <h1 className="text-2xl">100x</h1>
             <img src="Images/user-avatar.png" alt="user avatar" className='block' />
         </header>
-        <Navbar />
+        <Navbar />``
         <main>
             <Tweet />
         </main>

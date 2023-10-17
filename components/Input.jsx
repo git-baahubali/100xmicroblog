@@ -1,25 +1,43 @@
 // components/InputBox.js
 
-import React from 'react';
+import React, { useState } from 'react';
 
-export function InputBox({label,classname, tick,eye}) {
+export function InputBox({label,classname, tick,isPassword,setter}) {
+    const [PasswordVisible, setPasswordVisible] = useState(false)
+    const [inputBoxValue, setInputBoxValue] = useState('')
+
+   
+function togglePasswordVisiblity() {
+    setPasswordVisible(!PasswordVisible);
+
+}
     return (
-        <div className={`border-0 border-green-400 group relative flex  justify-start items-center bg-black  ${classname}`}>
+        <div className={`border-0 border-green-400 group relative flex  justify-start items-center w-full bg-black  ${classname}`}>
             <input
-                type="text"
+                type={isPassword && !PasswordVisible ?"password":"text"}
+                onChange={(e)=>{
+                    const newValue = e.target.value;
+                    setInputBoxValue(newValue);
+                    if (setter) {
+                        setter(newValue);  // Calling the setName function passed as prop
+                    }
+                }}
                 id="label"
                 className={`box-content ml-2 w-full block  border border-gray-300 bg-black rounded-lg
-                 focus:border-blue-500 px-6 py-[16px] focus:outline-none`}
+                 focus:border-blue-500 px-6 py-[16px] focus:outline-none`
+                }
             />
             <label
                 htmlFor="label"
-                className="absolute top-[1rem] bg-black m-0 text-gray-500 text-sm  px-2 transition-all duration-300 
-                group-hover:top-[-0.5rem] left-4 group-active:text-xs group-active:text-blue-500 group-hover:text-blue-500">
+                className={`absolute top-[1rem] bg-black m-0 text-gray-500 text-sm  px-2 transition-all duration-300 
+                group-hover:top-[-0.5rem] left-4 group-active:text-xs  group-hover:text-blue-500 ${inputBoxValue.length>0?'top-[-0.5rem]':''}`}>
                 {label}
 
             </label>
             {tick && <img src="images/tick_icon.svg" alt="" className='absolute right-1 ' />}
-            {eye && <img src="images/eye.svg" alt="" srcset="" className='absolute right-1 '/>}
+            {isPassword && <img src="images/eye.svg" alt="" srcset="" className={`absolute right-1 ${PasswordVisible?'bg-blue-700':''} rounded-full`} onClick={()=>{
+                setPasswordVisible(!PasswordVisible)
+            }}/>}
 
         </div>
     );
