@@ -38,7 +38,7 @@ function Profile() {
 
             <section className='bg-sky-700 px-4 py-2 rounded m-auto my-2 flex justify-between items-center'>
        
-      <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/Edit_profile'>← prev</a>
+      <a className='bg-sky-500  px-4 rounded-full' href='http://microblogging100x-dadb27e921ca.herokuapp.com/Edit_profile'>← prev</a>
       {/* <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/'>next  →</a> */}
       </section>
 

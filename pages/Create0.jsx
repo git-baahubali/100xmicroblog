@@ -40,7 +40,7 @@ function Create0() {
         <section className='bg-sky-700 px-4 py-2 rounded m-auto my-2 flex justify-between items-center'>
        
       {/* <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/'>← prev</a> */}
-      <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/Create1'>next  →</a>
+      <a className='bg-sky-500  px-4 rounded-full' href='http://microblogging100x-dadb27e921ca.herokuapp.com/Create1'>next  →</a>
       </section>
       </section>
     </div>
@@ -48,3 +48,5 @@ function Create0() {
 }
 
 export default Create0
+
+// microblogging100x-dadb27e921ca.herokuapp.com
