@@ -29,8 +29,8 @@ function togglePasswordVisiblity() {
             />
             <label
                 htmlFor="label"
-                className={`absolute top-[1rem] bg-black m-0 text-gray-500 text-sm  px-2 transition-all duration-300 
-                group-hover:top-[-0.5rem] left-4 group-active:text-xs  group-hover:text-blue-500 ${inputBoxValue.length>0?'top-[-0.5rem]':''}`}>
+                className={`absolute top-[-0.5rem] bg-black m-0 text-gray-500 text-sm  px-2 transition-all duration-300 
+                 left-4 group-active:text-xs  group-hover:text-blue-500 ${true?'top-[-0.5rem]':''}`}>
                 {label}
 
             </label>

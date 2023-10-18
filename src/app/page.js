@@ -9,6 +9,7 @@ import SwipeButton from '../../components/Swipe';
 import { InputTweet, SignUp } from '../../components/InputTweet';
 import Login0 from '../../pages/Create0';
 import Login1 from '../../pages/Create1';
+import NavigationBar from '../../components/Navigationbar';
 
 // import SwipeToActivateComponent from '../../components/Swipe';
 
@@ -23,8 +24,9 @@ export default function Home() {
       
       <Login0 />
       <section className='bg-sky-900 px-4 py-2 rounded m-auto my-2'>
-      Backend in progress
-    </section>
+        Backend in progress
+        {/* <NavigationBar /> */}
+      </section>
     </main>
 
   )
