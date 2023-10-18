@@ -58,6 +58,15 @@ function test() {
         <Create_acc_Button disabled={true} className='' onClick={handleCreateAccount}>Create account</Create_acc_Button>
 
         </footer>
+        <section className='bg-sky-900 px-4 py-2 rounded m-auto my-2'>
+        Backend in progress. check out static application using prev next buttons
+        {/* <NavigationBar /> */}
+        <section className='bg-sky-700 px-4 py-2 rounded m-auto my-2 flex justify-between items-center'>
+       
+      <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/Create0'>← prev</a>
+      <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/Home'>next  →</a>
+      </section>
+      </section>
     </main>
   )
 }

@@ -18,6 +18,9 @@ function Create3({email_id}) {
                 <Create_acc_Button disabled={true}>Next</Create_acc_Button>
 
             </footer>
+            <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/Create2'>← prev</a>
+      <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/Create4'>next  →</a>
+
         </main>
     )
 }

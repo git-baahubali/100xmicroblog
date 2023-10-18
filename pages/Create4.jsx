@@ -17,6 +17,9 @@ function Create4({}) {
             <footer className='absolute bottom-0 flex justify-center w-full '>
                 <Create_acc_Button disabled={true}>Next</Create_acc_Button>
             </footer>
+            <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/Create3'>← prev</a>
+      <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/Home'>next  →</a>
+
         </main>
     )
 }

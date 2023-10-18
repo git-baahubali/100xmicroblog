@@ -19,6 +19,9 @@ function Create2() {
 <Signup_Button>Sign up</Signup_Button>
 
         </footer>
+        <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/Create1'>← prev</a>
+      <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/Create3'>next  →</a>
+
     </main>
   )
 }

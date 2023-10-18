@@ -20,6 +20,11 @@ function Home() {
         bg-twitter-blue-default p-[16px]'>
             <p className="text-center">+</p>
         </button>
+        <section className='bg-sky-700 px-4 py-2 rounded m-auto my-2 flex justify-between items-center'>
+       
+      <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/Create1'>← prev</a>
+      <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/Edit_profile'>next  →</a>
+      </section>
     </div>
   )
 }

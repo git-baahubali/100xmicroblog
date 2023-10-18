@@ -51,6 +51,11 @@ function Edit_profile() {
         <li><InputBox label={'Location'} /></li>
         <li><InputBox label={'Website'} /></li>
       </ul>
+      <section className='bg-sky-700 px-4 py-2 rounded m-auto my-2 flex justify-between items-center'>
+       
+       <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/Home'>← prev</a>
+       <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/Profile'>next  →</a>
+       </section>
 
     </div>
   )
