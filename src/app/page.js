@@ -20,25 +20,11 @@ export default function Home() {
 
   return (
     <main>
+      
       <Login0 />
-      {/* <Create_acc_Button disabled={false}>Create Account</Create_acc_Button>
-      <Signup_Button >Sign up</Signup_Button>
-      <Follow_Button disabled={false}>Follow</Follow_Button>
-      <Following_Button />
-      <Post_Button disabled={'1'} />
-      <Navbar />
-      <Home_icon selected={true}/>
-      <Group_icon selected={true}/>
- 
-      <main>
-        <h1>Assignment 1.2</h1>
-        <InputBox />
-        <TweetBox/>
-        <SearchBox />
-        <InputTweet />
-        <SignUp />
-        
-      </main> */}
+      <section className='bg-sky-900 px-4 py-2 rounded m-auto my-2'>
+      Backend in progress
+    </section>
     </main>
 
   )

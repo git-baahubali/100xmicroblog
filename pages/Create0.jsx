@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 function Create0() {
   //! do not use router stick to <Link> .else navigation will break
-  // const router = useRouter();
+  //  const router = useRouter();
   // if (!router.isReady) return null;
   // function gotoLogin1(){
   //   router.push('/Login1');
@@ -31,6 +31,8 @@ function Create0() {
           <Signup_Button  >Sign in</Signup_Button>
         </Link>
         {/* <Signup_Button onClick={gotoLogin1} >Sign in</Signup_Button> */}
+
+        
       </main>
     </div>
   )
