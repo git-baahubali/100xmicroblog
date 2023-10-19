@@ -59,10 +59,10 @@ function Create1() {
 
       </footer>
       <section className='bg-sky-900 px-4 py-2 rounded m-auto my-2'>
-        Backend in progress. check out static application using prev next buttons
+      Backend under development. Preview the application using the previous and next buttons.
         {/* <NavigationBar /> */}
 
-        <section className='absolute bottom-4 left-2 bg-sky-700 px-4 py-2 rounded m-auto my-2 flex justify-between items-center'>
+        <section className='fixed bottom-4 left-2 bg-sky-700 px-4 py-2 rounded m-auto my-2 flex w-full justify-between items-center'>
           <a className='bg-sky-500  px-4 rounded-full' href='http://microblogging100x-dadb27e921ca.herokuapp.com/Create0'>← prev</a>
           <a className='bg-sky-500  px-4 rounded-full' href='http://microblogging100x-dadb27e921ca.herokuapp.com/Home'>next  →</a>
         </section>

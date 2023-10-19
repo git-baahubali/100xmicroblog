@@ -21,7 +21,7 @@ function Home() {
         <p className="text-center">+</p>
       </button>
 
-      <section className='absolute bottom-4 left-2 bg-sky-700 px-4 py-2 rounded m-auto my-2 flex justify-between items-center'>
+      <section className='w-full absolute bottom-4 left-2 bg-sky-700 px-4 py-2 rounded m-auto my-2 flex justify-between items-center'>
         <a className='bg-sky-500  px-4 rounded-full' href='http://microblogging100x-dadb27e921ca.herokuapp.com/Create1'>← prev</a>
         <a className='bg-sky-500  px-4 rounded-full' href='http://microblogging100x-dadb27e921ca.herokuapp.com/Edit_profile'>next  →</a>
       </section>
