@@ -32,16 +32,16 @@ function Create0() {
         </Link>
         {/* <Signup_Button onClick={gotoLogin1} >Sign in</Signup_Button> */}
 
-        
+
       </main>
       <section className='bg-sky-900 px-4 py-2 rounded m-auto my-2'>
         Backend in progress. check out static application using prev next buttons
         {/* <NavigationBar /> */}
-        <section className='bg-sky-700 px-4 py-2 rounded m-auto my-2 flex justify-between items-center'>
-       
-      {/* <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/'>← prev</a> */}
-      <a className='bg-sky-500  px-4 rounded-full' href='http://microblogging100x-dadb27e921ca.herokuapp.com/Create1'>next  →</a>
-      </section>
+
+        <section className='absolute bottom-4 left-2bg-sky-700 px-4 py-2 rounded m-auto my-2 flex justify-between items-center'>
+          {/* <a className='bg-sky-500  px-4 rounded-full' href='http://localhost:3000/'>← prev</a> */}
+          <a className='bg-sky-500  px-4 rounded-full' href='http://microblogging100x-dadb27e921ca.herokuapp.com/Create1'>next  →</a>
+        </section>
       </section>
     </div>
   )
