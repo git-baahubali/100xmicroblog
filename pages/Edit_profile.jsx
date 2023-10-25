@@ -1,14 +1,27 @@
-import React from 'react'
+import React,{useState} from 'react';
+import Link from 'next/link';
 import { InputBox } from '../components/Input'
 
 function Edit_profile() {
+const [Name, setName] = useState('');// saved here
+const [Username, setUsername] = useState('');
+const [Bio, setBio] = useState('');
+const [Location, setLocation] = useState('');
+const [Website, setWebsite] = useState('');
+
+function handleSave() {
+  
+}
+
   return (
     <div className='px-[16px] '>
       {/* change profile wall */}
       <header className="flex justify-between items-center my-[12px]">
+        <Link href={'/Profile'}>
         <img src="Images/profile-edit-1-arrow-left.svg" alt="" srcset="" />
+        </Link>
         <p className="font-bold">Edit Profile</p>
-        <button className="bg-white text-black font-bold text-lg py-[8px] px-[20px] rounded-full">Save</button>
+        <button className="bg-white text-black font-bold text-lg py-[8px] px-[20px] rounded-full" onClick={handleSave}>Save</button>
       </header>
 
       {/* change avatar image */}
@@ -26,7 +39,9 @@ function Edit_profile() {
 
       {/* Edit fields input boxs */}
       <ul className='my-8 flex flex-col gap-[20px]'>
-        <li><InputBox label={'Name'} value={''}/></li>
+        <li><InputBox label={'Name'} value={Name}  setter={setName}/></li>
+        <li><InputBox label={'Username'} value={''} setter={setUsername}/></li>
+
         <li>
           {/* Bio edit  */}
           <div className={`border-0 border-green-400 group relative flex  justify-start items-center bg-black  ${''}`}>
@@ -48,17 +63,15 @@ function Edit_profile() {
         </div>
 
         </li>
-        <li><InputBox label={'Location'} /></li>
-        <li><InputBox label={'Website'} /></li>
+        <li><InputBox label={'Location'}  setter={setLocation}/></li>
+        <li><InputBox label={'Website'} setter={setWebsite}/></li>
       </ul>
-      <section className='w-full absolute bottom-4 left-2 bg-sky-700 px-4 py-2 rounded m-auto my-2 flex justify-between items-center'>
-       
-       <a className='bg-sky-500  px-4 rounded-full' href='http://microblogging100x-dadb27e921ca.herokuapp.com/Home'>← prev</a>
-       <a className='bg-sky-500  px-4 rounded-full' href='http://microblogging100x-dadb27e921ca.herokuapp.com/Profile'>next  →</a>
-       </section>
+      
 
     </div>
   )
 }
 
 export default Edit_profile 
+
+

@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react';
 
-export function InputBox({label,classname, tick,isPassword,setter}) {
+export function InputBox({label,classname, tick,isPassword,setter,value='default'}) {
     const [PasswordVisible, setPasswordVisible] = useState(false)
     const [inputBoxValue, setInputBoxValue] = useState('')
+    console.log(value);
 
-   
 function togglePasswordVisiblity() {
     setPasswordVisible(!PasswordVisible);
 
@@ -16,13 +16,10 @@ function togglePasswordVisiblity() {
             <input
                 type={isPassword && !PasswordVisible ?"password":"text"}
                 onChange={(e)=>{
-                    const newValue = e.target.value;
-                    setInputBoxValue(newValue);
-                    if (setter) {
-                        setter(newValue);  // Calling the setName function passed as prop
-                    }
+                    setter(e.target.value)
                 }}
                 id="label"
+                value={value}
                 className={`box-content ml-2 w-full block  border border-gray-300 bg-black rounded-lg
                  focus:border-blue-500 px-6 py-[16px] focus:outline-none`
                 }
