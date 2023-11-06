@@ -37,7 +37,8 @@ export async function signOut() {
   }
 
 export async function loginWithGoogle() {
-  const baseURL = process.env.NODE_ENV === 'production' ? 'https://microblogging100x-dadb27e921ca.herokuapp.com/' : 'http://localhost:3000/'
+  // const baseURL = process.env.NODE_ENV === 'production' ? 'https://microblogging100x-dadb27e921ca.herokuapp.com/' : 'http://localhost:3000/'
+   const baseURL = 'https://microblogging100x-dadb27e921ca.herokuapp.com'
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options:{
