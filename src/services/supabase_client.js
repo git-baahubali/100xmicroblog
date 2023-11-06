@@ -16,5 +16,7 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = 'https://fswlcclmmwwhzkqfbmhc.supabase.co';
 const supabaseAnonKey  ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZzd2xjY2xtbXd3aHprcWZibWhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTcxMjg2MDcsImV4cCI6MjAxMjcwNDYwN30.UFaFkR2RtuorvxlwCsCNhIMeh2SK8ArNT2VH4MlNvrA';
 
- const supabase = createClient(supabaseUrl, supabaseAnonKey);
+ const supabase = createClient(supabaseUrl, supabaseAnonKey,{
+    auth:{ flowType: 'pkce'}
+ });
  export default supabase;

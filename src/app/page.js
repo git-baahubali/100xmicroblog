@@ -15,26 +15,33 @@ import { InputTweet, SignUp } from '../../components/InputTweet';
 import Create0 from '../../pages/Create0';
 import NavigationBar from '../../components/Navigationbar';
 import Navigation from '../../components/Navigation';
+import Reducer from '../../pages/Reducer';
+import Memo from '../../pages/Memo';
 
 
 
-export default function Home() {
+export default function Main() {
   const router = useRouter();
 
   useEffect(() => {
+    // supabase.auth.onAuthStateChange((event, session) => {
+    //   if (event == 'SIGNED_IN') {
+    //     console.log('SIGNED_IN', session);
+    //     Router.push('/Home')
+    //   };
+    // })
 
-   
+    // return () => {
 
-    supabase.auth.onAuthStateChange((event, session) => {
-      if (event == 'SIGNED_IN') 
-      {
-        console.log('SIGNED_IN', session);
-        Router.push('/Home')};
-      })
+    // }
 
-    return () => {
-      
-    }
+    (async () => {
+
+      // const { data, error } = await supabase.auth.refreshSession()
+      // console.log("session :", data);
+
+    })()
+
   }, [])
 
 
@@ -43,6 +50,9 @@ export default function Home() {
     <main className=''>
 
       <Create0 />
+
+      {/* <Reducer /> */}
+      {/* <Memo /> */}
     </main>
 
   )

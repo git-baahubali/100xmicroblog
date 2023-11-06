@@ -4,22 +4,45 @@ import { Navbar } from '../components/Navbar'
 import Tweet from '../components/Tweet'
 import Hamburger_fa from '../components/Hamburger_fa'
 import { useRouter } from 'next/navigation'
-import { signOut } from '@/utilities'
+import { signOut, storeTokens } from '@/utilities'
 
 
 function Home() {
   const router = useRouter();
 
-   function handleLogout() {
-      console.log('inside handleLogout');
-      signOut(redirectAfterSignOut);
+  function handleLogout() {
+    console.log('inside handleLogout');
+    signOut();
+  }
+
+  useEffect(() => {
+
+    if (window.location.hash) {
+      // Parse the hash for access token and remove tokens from the URL
+      const { access_token, refresh_token } = parseHash(window.location.hash);
+      // Securely store the tokens
+      storeTokens(access_token, refresh_token);
+      // Replace the URL with the base URL to remove the hash
+      window.history.replaceState({}, document.title, "/");
     }
 
-function redirectAfterSignOut() {
-  router.push('/');
-}
+    function parseHash(hash) {
+      const pairs = hash.slice(1).split('&');
+      const result = {};
+      pairs.forEach(pair => {
+        const [key, value] = pair.split('=');
+        result[key] = value;
+      });
+      return result;
+
+    }
+  }
+    , [])
   return (
-    <div>
+    <div className=''>
+      <aside id="sidebar" className='absolute '>
+
+      </aside>
       <header className='flex items-start justify-between px-[16px] py-[12px] border '>
         <Hamburger_fa classname={"h-[32px]"} />
         {/* <img src="Images/100.svg" alt="" srcset="" /> */}
@@ -36,9 +59,9 @@ function redirectAfterSignOut() {
         bg-twitter-blue-default p-[16px]'>
         <p className="text-center">+</p>
       </button>
-      <button className='absolute left-[17px]  h-[64px] bottom-4 text-3xl  rounded-full
-        bg-twitter-blue-default p-[16px]'>
-        <p className="text-center" onClick={handleLogout}>Logout</p>
+      <button className='absolute left-[17px] bottom-0 h-[48px] bottom-4 text-3xl  rounded-full
+        bg-twitter-blue-default px-4 py-2'>
+        <p className="text-center " onClick={handleLogout}>Logout</p>
       </button>
 
     </div>

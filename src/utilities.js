@@ -28,19 +28,19 @@ export async function signInWithEmail(Email,Password,onSignInSuccess,onSignInErr
       onSignInSuccess(data); // Navigate to the home page or do other tasks
     }}
 
-export async function signOut(onSignOutSucess) {
+export async function signOut() {
     const { error } = await supabase.auth.signOut()
     if(error)
     console.log("Error signing Out : ",Error);
   else
-  onSignOutSucess();
+  router.push('/');
   }
 
 export async function loginWithGoogle() {
-  const { error } = await supabase.auth.signInWithOAuth({
+  const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options:{
-      redirectTo:'http://localhost:3000/Home'
+      redirectTo:`${window.origin}`+'/Home'
     }
   });
 
@@ -51,6 +51,9 @@ export async function loginWithGoogle() {
     console.log('Signed in with Google successfully');
   }
 }
+
+
+
 
 
 export async function gerRefreshTokenFromGoogle() {
@@ -74,3 +77,22 @@ export async function getUserId() {
 }
 
 
+export async function storeTokens(access_token, refresh_token) {
+  try {
+    const response = await fetch('/api/auth/storeTokens', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ access_token, refresh_token }),
+    });
+
+    if (response.ok) {
+      console.log('Tokens stored securely');
+    } else {
+      console.error('Failed to store tokens securely');
+    }
+  } catch (error) {
+    console.error('Error storing tokens securely:', error);
+  }
+}

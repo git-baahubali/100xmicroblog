@@ -1,5 +1,5 @@
 // 'use-client'
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Create_acc_Button, Signup_Button } from '../components/Buttons'
 import Link from 'next/link';
@@ -7,10 +7,16 @@ import { loginWithGoogle } from '@/utilities';
 import supabase from '@/services/supabase_client';
 
 
+
+
 function Create0() {
-  //! do not use router stick to <Link> .else navigation will break
-  console.log(supabase);
+
   const router = useRouter();
+
+  useEffect(() => {
+
+  }, [])
+
 
   return (
     <div className='relative flex flex-col justify-center h-screen w-full '>
