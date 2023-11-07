@@ -17,8 +17,8 @@ export async function createAccountWithEmail(email, password, onSuccess, onError
 
 export async function signInWithEmail(Email,Password,onSignInSuccess,onSignInError) {
     const { data, error } = await supabase.auth.signInWithPassword({
-      email: 'example@email.com',
-      password: 'example-password',
+      email: Email,
+      password: Password,
     })
     if (error) {
       console.error('Error signing in:', error);
@@ -42,7 +42,7 @@ export async function loginWithGoogle() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options:{
-      redirectTo:`${baseURL}`+'/Home'
+      redirectTo:'https://microblogging100x-dadb27e921ca.herokuapp.com'+'/Home',
     }
   });
 
