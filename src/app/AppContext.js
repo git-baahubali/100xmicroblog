@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useMemo } from 'react';
 
 // Creating a context with default values
 const AppContext = createContext();
@@ -7,11 +7,14 @@ export const AppProvider = ({ children }) => {
     const [Name, setName] = useState('')
     const [Email, setEmail] = useState('');
 
-    const context = { Name, setName, Email, setEmail}
+
+    const contextValue = useMemo(() => {
+        return { Name, setName, Email, setEmail };
+    }, [Name, Email]);
     // You can add more state variables as needed
 
     return (
-        <AppContext.Provider value={context}>
+        <AppContext.Provider value={contextValue}>
             {children}
         </AppContext.Provider>
     );

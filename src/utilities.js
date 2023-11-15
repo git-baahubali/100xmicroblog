@@ -2,47 +2,49 @@ import supabase from "./services/supabase_client";
 
 export async function createAccountWithEmail(email, password, onSuccess, onError) {
   const { user, error } = await supabase.auth.signUp({
-      email: email,
-      password: password,
+    email: email,
+    password: password,
   });
 
   if (error) {
-      console.error('Error creating account:', error.message);
-      onError(error.message);
+    console.error('Error creating account:', error.message);
+    onError(error.message);
   } else {
-      console.log('Account created successfully:', user);
-      onSuccess(user);
+    console.log('Account created successfully:', user);
+    onSuccess(user);
   }
 }
 
-export async function signInWithEmail(Email,Password,onSignInSuccess,onSignInError) {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: Email,
-      password: Password,
-    })
-    if (error) {
-      console.error('Error signing in:', error);
-      onSignInError(error); // Handle the error (e.g., show an error message to the user)
-    } else {
-      console.log('Signed in successfully:', data);
-      onSignInSuccess(data); // Navigate to the home page or do other tasks
-    }}
+export async function signInWithEmail(Email, Password, onSignInSuccess, onSignInError) {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: Email,
+    password: Password,
+  })
+  if (error) {
+    console.error('Error signing in:', error);
+    onSignInError(error); // Handle the error (e.g., show an error message to the user)
+  } else {
+    console.log('Signed in successfully:', data);
+    onSignInSuccess(data); // Navigate to the home page or do other tasks
+  }
+}
 
 export async function signOut() {
-    const { error } = await supabase.auth.signOut()
-    if(error)
-    console.log("Error signing Out : ",Error);
+  const { error } = await supabase.auth.signOut()
+  if (error)
+    console.log("Error signing Out : ", Error);
   else
-  router.push('/');
-  }
+    router.push('/');
+}
 
 export async function loginWithGoogle() {
   // const baseURL = process.env.NODE_ENV === 'production' ? 'https://microblogging100x-dadb27e921ca.herokuapp.com/' : 'http://localhost:3000/'
-   const baseURL = 'https://microblogging100x-dadb27e921ca.herokuapp.com'
+  const HerokuURL = 'https://100xmicroblog-58efc6b3z-git-baahubali.vercel.app/'
+  const localURL = 'http://localhost:3000/'
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
-    options:{
-      redirectTo:'https://microblogging100x-dadb27e921ca.herokuapp.com'+'/Home',
+    options: {
+      redirectTo: localURL + '/Home',
     }
   });
 
@@ -68,7 +70,7 @@ export async function gerRefreshTokenFromGoogle() {
       },
     },
   })
-  
+
 }
 
 export async function getUserId() {
