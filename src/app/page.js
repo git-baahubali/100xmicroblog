@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import supabase from '@/services/supabase_client';
-// import './globals.css';
+import './globals.css';
 
 //components
 import { Create_acc_Button, Follow_Button, Signup_Button, Following_Button, Post_Button, Home_icon, Group_icon } from '../../components/Buttons';
@@ -47,7 +47,7 @@ export default function Main() {
 
 
   return (
-    <main className=''>
+    <main className='bg-black text-white'>
 
       <Create0 />
 

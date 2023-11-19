@@ -18,6 +18,8 @@
 
 body {
   max-width: 375px;
+  background-color: black;
+  color: white;
   margin: 0 auto;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

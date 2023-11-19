@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-export function InputBox({label,classname, tick,isPassword,setter,value='default'}) {
+export function InputBox({label,classname, tick,isPassword,setter,value}) {
     const [PasswordVisible, setPasswordVisible] = useState(false)
     const [inputBoxValue, setInputBoxValue] = useState('')
     console.log(value);

@@ -3,15 +3,27 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Create_acc_Button, Signup_Button } from '../components/Buttons'
 import Link from 'next/link';
-import { loginWithGoogle } from '@/utilities';
+import { loginWithGoogle, login } from '@/utilities';
 import supabase from '@/services/supabase_client';
 
 
 
 
-function Create0() {
 
+function Create0() {
   const router = useRouter();
+
+  async function onSignInHandler() {
+    const data = await login()
+
+    if (data.message) 
+      console.log("msg: ",data.message);
+    else if (data.token)
+        router.push('/Home')
+    else
+      console.log(data)
+
+  }
 
   useEffect(() => {
 
@@ -19,7 +31,7 @@ function Create0() {
 
 
   return (
-    <div className='relative flex flex-col justify-center h-screen w-full '>
+    <div className='relative flex flex-col justify-center h-screen w-full  bg-black text-white'>
       <h1 className="w-full py-[12px] px-[16px] text-center text-3xl absolute top-0">100X</h1>
       <main className='flex flex-col justify-center gap-1 items-start px-[28px] box-content'>
         <h3 className="text-3xl ">Hapenning now</h3>
@@ -34,7 +46,7 @@ function Create0() {
         </div>
         <p className='mb-[20px]'>Already have an account?</p>
         <Link href={''}>
-          <Signup_Button  >Sign in</Signup_Button>
+          <Signup_Button onClick={onSignInHandler} >Sign in</Signup_Button>
         </Link>
         {/* <Signup_Button onClick={gotoLogin1} >Sign in</Signup_Button> */}
 
