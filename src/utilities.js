@@ -39,25 +39,28 @@ export async function signInWithEmail(
   }
 }
 
-export async function login() {
-  // const router = useRouter();
-try {
-  const baseURL = "https://dummyjson.com/auth";
-  const response = await fetch(baseURL + "/login", {
-    method: "POST",
-    headers: {
-      "Content-type": "application/json",
-    },
-    body: JSON.stringify({
-      username: 'kminchelle',
-      password: '0lelplR',
-    }),
-  });
-  return response.json();  
-} catch (error) {
-  console.log("Error occured at login() in utilities.js: " );
-  console.log(error);
-}
+export async function login(username, password) {
+
+  try {
+    const baseURL = "https://dummyjson.com/auth";
+    const response = await fetch(baseURL + "/login", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password,
+      }),
+    });
+
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+    return response;
+  } catch (error) {
+    console.log("Error occured at login() in utilities.js: ");
+    throw error;
+  }
 }
 export async function signOut() {
   const { error } = await supabase.auth.signOut();

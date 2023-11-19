@@ -14,15 +14,20 @@ function Create0() {
   const router = useRouter();
 
   async function onSignInHandler() {
-    const data = await login()
+    try {
+      const response = await login('kminchelle', '0lelplR');
 
-    if (data.message) 
-      console.log("msg: ",data.message);
-    else if (data.token)
-        router.push('/Home')
-    else
-      console.log(data)
-
+      if (response.ok) {
+        const data = await response.json();
+        console.log("User data:", data);
+        if (data.token)
+          router.push('/Home');
+      } 
+      else 
+        console.log("Login failed:", response.status);
+    } catch (error) {
+      console.error("Login error:", error);
+    }
   }
 
   useEffect(() => {
